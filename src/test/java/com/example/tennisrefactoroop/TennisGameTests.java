@@ -1,6 +1,8 @@
+package com.example.tennisrefactoroop;
+
 import junit.framework.TestCase;
 
-public class TennisGameTest extends TestCase {
+public class TennisGameTests extends TestCase {
 	
 	TennisGame game = new TennisGame("Boris Becker" , "Bjørn Borg");
 	
