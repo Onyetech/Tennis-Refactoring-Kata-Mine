@@ -1,9 +1,9 @@
 package com.example.tennisrefactoroop;
 
-public class TennisGame3 implements TennisGame {
+public class TennisGame3 {
     
-    private final int playerTwoScore = 0;
-    private final int playerOneScore = 0;
+    private int playerTwoScore = 0;
+    private int playerOneScore = 0;
     private final String playerOneName;
     private final String playerTwoName;
 
@@ -73,6 +73,14 @@ public class TennisGame3 implements TennisGame {
                 return "Love";
         }
         throw new IllegalArgumentException("Illegal score: " + score);
+    }
+
+    public void playerOneScores() {
+        playerOneScore++;
+    }
+
+    public void playerTwoScores() {
+        playerTwoScore++;
     }
 
 
