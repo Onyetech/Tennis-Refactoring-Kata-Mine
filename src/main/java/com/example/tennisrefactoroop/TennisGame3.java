@@ -14,7 +14,7 @@ public class TennisGame3 implements TennisGame {
 
     public String getScore() {
         if (hasWinner()) {
-            return playerWithHighestScore() + " wins";
+            return highestScoringPlayer() + " wins";
         }
 
         if (hasAdvantage()) {
@@ -45,6 +45,14 @@ public class TennisGame3 implements TennisGame {
         if(playerOneScore >= 4 && playerOneScore >= playerTwoScore + 2)
             return true;
         return false;
+    }
+
+    private String highestScoringPlayer() {
+        if (playerOneScore > playerTwoScore) {
+            return playerOneName;
+        } else {
+            return playerTwoName;
+        }
     }
 
 
