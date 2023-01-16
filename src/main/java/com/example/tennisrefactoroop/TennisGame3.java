@@ -65,6 +65,10 @@ public class TennisGame3 implements TennisGame {
 
     }
 
+    private boolean isDeuce() {
+        return playerOneScore >= 3 && playerTwoScore == playerOneScore;
+    }
+
 
 
 }
