@@ -17,8 +17,8 @@ public class TennisGame3 implements TennisGame {
             return highestScoringPlayer() + " wins";
         }
 
-        if (hasAdvantage()) {
-            return "Advantage " + playerWithHighestScore();
+        if (playerWithAdvantage()) {
+            return "Advantage " + highestScoringPlayer();
         }
 
         if (isDeuce())
@@ -53,6 +53,16 @@ public class TennisGame3 implements TennisGame {
         } else {
             return playerTwoName;
         }
+    }
+
+    private boolean playerWithAdvantage() {
+        if (playerTwoScore >= 4 && playerTwoScore == playerOneScore + 1)
+            return true;
+        if (playerOneScore >= 4 && playerOneScore == playerTwoScore + 1)
+            return true;
+
+        return false;
+
     }
 
 
