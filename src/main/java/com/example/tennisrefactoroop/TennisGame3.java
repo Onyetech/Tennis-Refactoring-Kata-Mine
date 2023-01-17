@@ -17,7 +17,7 @@ public class TennisGame3 {
             return highestScoringPlayer() + " wins";
         }
 
-        if (playerWithAdvantage()) {
+        if (playerHasAnAdvantage()) {
             return "Advantage " + highestScoringPlayer();
         }
 
@@ -47,7 +47,7 @@ public class TennisGame3 {
         }
     }
 
-    private boolean playerWithAdvantage() {
+    private boolean playerHasAnAdvantage() {
         if (playerTwoScore >= 4 && playerTwoScore == playerOneScore + 1)
             return true;
         if (playerOneScore >= 4 && playerOneScore == playerTwoScore + 1)
@@ -82,7 +82,4 @@ public class TennisGame3 {
     public void playerTwoScores() {
         playerTwoScore++;
     }
-
-
-
 }

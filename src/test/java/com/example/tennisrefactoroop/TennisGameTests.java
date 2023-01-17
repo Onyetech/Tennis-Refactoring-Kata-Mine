@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 
 public class TennisGameTests extends TestCase {
 
-	TennisGame3 game = new TennisGame3("Boris Becker" , "Bjørn Borg");
+	TennisGame3 game = new TennisGame3("James" , "Paul");
 
 	public void testNewGameShouldReturnLoveAll()
 	{
@@ -19,6 +19,16 @@ public class TennisGameTests extends TestCase {
 
 		String score = game.getScore();
 		assertEquals("Fifteen,Love", score);
+		// player one score greater initially
+	}
+
+	public void testPlayerTwoWinsFirstBall()
+	{
+		game.playerTwoScores();
+
+		String score = game.getScore();
+		assertEquals("Love,Fifteen", score);
+		// only possible this way, as the other case
 	}
 
 	public void testFifteenAll(){
@@ -55,14 +65,14 @@ public class TennisGameTests extends TestCase {
 		createScore(4, 0);
 
 		String score = game.getScore();
-		assertEquals("Boris Becker wins", score);
+		assertEquals("James wins", score);
 	}
 
 	public void testPlayerTwoWinsGame(){
 		createScore(1,4);
 
 		String score = game.getScore();
-		assertEquals("Bjørn Borg wins", score);
+		assertEquals("Paul wins", score);
 	}
 
 	public void testPlayersAreDuce4() {
@@ -75,27 +85,27 @@ public class TennisGameTests extends TestCase {
 		createScore(4, 5);
 
 		String score = game.getScore();
-		assertEquals("Advantage Bjørn Borg", score);
+		assertEquals("Advantage Paul", score);
 	}
 
 	public void testPlayerOneAdvantage(){
 		createScore(5, 4);
 
 		String score = game.getScore();
-		assertEquals("Advantage Boris Becker", score);
+		assertEquals("Advantage James", score);
 	}
 
 	public void testPlayerTwoWins(){
 		createScore(2, 4);
 		String score = game.getScore();
-		assertEquals("Bjørn Borg wins", score);
+		assertEquals("Paul wins", score);
 	}
 
 
 	public void testPlayerTwoWinsAfterAdvantage() {
 		createScore(6, 8);
 		String score = game.getScore();
-		assertEquals("Bjørn Borg wins", score);
+		assertEquals("Paul wins", score);
 	}
 
 
@@ -103,7 +113,7 @@ public class TennisGameTests extends TestCase {
 	public void testPlayerOneWinsAfterAdvantage() {
 		createScore(8, 6);
 		String score = game.getScore();
-		assertEquals("Boris Becker wins", score);
+		assertEquals("James", score);
 	}
 
 	private void createScore(int playerOneBalls, int playerTwoBalls ) {
