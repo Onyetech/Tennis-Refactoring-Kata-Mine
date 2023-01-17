@@ -112,7 +112,7 @@ public class TennisRefactorOopApplicationTests extends TestCase {
     public void testPlayerOneWinsAfterAdvantage() {
         createScore(8, 6);
         String score = game.getScore();
-        assertEquals("James", score);
+        assertEquals("James wins", score);
     }
 
     private void createScore(int playerOneBalls, int playerTwoBalls ) {
