@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 
 public class TennisGameTests extends TestCase {
 
-	TennisGame3 game = new TennisGame3("James" , "Paul");
+	TennisGameActivity game = new TennisGameActivity("James" , "Paul");
 
 	public void testNewGameShouldReturnLoveAll()
 	{

@@ -87,7 +87,7 @@
 //	@ParameterizedTest
 //	@MethodSource("possibleScoresAndExpectedScore")
 //	void checkAllScoresTennisGame3(int player1Score, int player2Score, String expectedScore) {
-//		TennisGame3 game = new TennisGame3("player1", "player2");
+//		TennisGameActivity game = new TennisGameActivity("player1", "player2");
 //		checkAllScores(game, player1Score, player2Score, expectedScore);
 //	}
 //

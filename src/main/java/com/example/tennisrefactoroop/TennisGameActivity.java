@@ -1,13 +1,13 @@
 package com.example.tennisrefactoroop;
 
-public class TennisGame3 {
+public class TennisGameActivity {
     
     private int playerTwoScore = 0;
     private int playerOneScore = 0;
     private final String playerOneName;
     private final String playerTwoName;
 
-    public TennisGame3(String playerOneName, String playerTwoName) {
+    public TennisGameActivity(String playerOneName, String playerTwoName) {
         this.playerOneName = playerOneName;
         this.playerTwoName = playerTwoName;
     }
