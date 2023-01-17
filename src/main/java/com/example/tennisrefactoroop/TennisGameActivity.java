@@ -1,6 +1,6 @@
 package com.example.tennisrefactoroop;
 
-public class TennisGameActivity {
+public class TennisGameActivity implements TennisGame{
     
     private int playerTwoScore = 0;
     private int playerOneScore = 0;
@@ -12,6 +12,7 @@ public class TennisGameActivity {
         this.playerTwoName = playerTwoName;
     }
 
+    @Override
     public String getScore() {
         if (hasWinner()) {
             return highestScoringPlayer() + " wins";
@@ -31,7 +32,8 @@ public class TennisGameActivity {
         return interpreteScore(playerOneScore) + "," + interpreteScore(playerTwoScore);
     }
 
-    private boolean hasWinner() {
+    @Override
+    public boolean hasWinner() {
         if(playerTwoScore >= 4 && playerTwoScore >= playerOneScore + 2 )
             return true;
         if(playerOneScore >= 4 && playerOneScore >= playerTwoScore + 2)
@@ -39,7 +41,8 @@ public class TennisGameActivity {
         return false;
     }
 
-    private String highestScoringPlayer() {
+    @Override
+    public String highestScoringPlayer() {
         if (playerOneScore > playerTwoScore) {
             return playerOneName;
         } else {
@@ -47,7 +50,8 @@ public class TennisGameActivity {
         }
     }
 
-    private boolean playerHasAnAdvantage() {
+    @Override
+    public boolean playerHasAnAdvantage() {
         if (playerTwoScore >= 4 && playerTwoScore == playerOneScore + 1)
             return true;
         if (playerOneScore >= 4 && playerOneScore == playerTwoScore + 1)
@@ -57,11 +61,13 @@ public class TennisGameActivity {
 
     }
 
-    private boolean isDeuce() {
+    @Override
+    public boolean isDeuce() {
         return playerOneScore >= 3 && playerTwoScore == playerOneScore;
     }
 
-    private String interpreteScore(int score) {
+    @Override
+    public String interpreteScore(int score) {
         switch (score) {
             case 3:
                 return "Forty";
