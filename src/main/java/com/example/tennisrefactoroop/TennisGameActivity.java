@@ -1,6 +1,6 @@
 package com.example.tennisrefactoroop;
 
-public class TennisGameActivity implements TennisGame{
+public class TennisGame1 implements TennisGame{
     
     private int playerTwoScore = 0;
     private int playerOneScore = 0;
