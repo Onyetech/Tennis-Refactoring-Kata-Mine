@@ -53,44 +53,23 @@ class TennisTest {
         );
     }
 
-    private void checkAllScores(TennisGame1 game, int player1Score, int player2Score, String expectedScore) {
+    private void checkAllScores(TennisGame2 game, int player1Score, int player2Score, String expectedScore) {
         addPoints(game, player1Score, "player1");
         addPoints(game, player2Score, "player2");
 
         assertThat(game.getScore()).isEqualTo(expectedScore);
     }
-    private void addPoints(TennisGame1 game, int points, String playerName) {
+    private void addPoints(TennisGame2 game, int points, String playerName) {
         for (int i = 0; i < points; i++) {
-            game.won();
+            game.wonPoint(playerName);
         }
     }
 
     @ParameterizedTest
     @MethodSource("possibleScoresAndExpectedScore")
     void checkAllScoresTennisGame(int player1Score, int player2Score, String expectedScore) {
-        TennisGameActivity game = new TennisGameActivity("David", "player2");
+        TennisGame2 game = new TennisGame2("player1", "player2");
         checkAllScores(game, player1Score, player2Score, expectedScore);
     }
-
-//    @ParameterizedTest
-//    @MethodSource("possibleScoresAndExpectedScore")
-//    void checkAllScoresTennisGame2(int player1Score, int player2Score, String expectedScore) {
-//        TennisGame2 game = new TennisGame2("player1", "player2");
-//        checkAllScores(game, player1Score, player2Score, expectedScore);
-//    }
-//
-//    @ParameterizedTest
-//    @MethodSource("possibleScoresAndExpectedScore")
-//    void checkAllScoresTennisGame3(int player1Score, int player2Score, String expectedScore) {
-//        TennisGame3 game = new TennisGame3("player1", "player2");
-//        checkAllScores(game, player1Score, player2Score, expectedScore);
-//    }
-//
-//    @ParameterizedTest
-//    @MethodSource("possibleScoresAndExpectedScore")
-//    void checkAllScoresTennisGame4(int player1Score, int player2Score, String expectedScore) {
-//        TennisGame game = new TennisGame4("player1", "player2");
-//        checkAllScores(game, player1Score, player2Score, expectedScore);
-//    }
 
 }
